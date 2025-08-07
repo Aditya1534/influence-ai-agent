@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LinkedIn AI Post Generator</title>
+</head>
+<body>
+    <h2>👋 Welcome, {{ profile.name }}</h2>
+    <p><strong>Title:</strong> {{ profile.title }}</p>
+    <p><strong>Industry:</strong> {{ profile.industry }}</p>
+    <p><strong>Skills:</strong> {{ profile.skills | join(', ') }}</p>
+    <p><strong>Interests:</strong> {{ profile.interests | join(', ') }}</p>
+
+    <form method="post">
+        <button type="submit">⚡ Generate LinkedIn Post</button>
+    </form>
+
+    {% if post %}
+        <h3>🎯 Generated Post:</h3>
+        <p style="white-space: pre-wrap;">{{ post }}</p>
+    {% endif %}
+</body>
+</html>
